@@ -1,1 +1,23 @@
-hola guapa, sonrieeeeee, que descanses bien dormilona :3
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Nombres y Apellidos</title>
+</head>
+<body>
+    <form method="POST" action="https://script.google.com/macros/s/AKfycbxulKF_fupVo84_NaDhY1nkOJzZZj5ELGJOoYB6LThyKXglJLLhRpuwia4grKro7KxXPQ/exec">
+        <input name="email" type="email" placeholder="Email" required>
+      <input name="name" type="text" placeholder="Name" required>
+    <button type="submit">Send</button>
+  </form>
+  <script>
+    function getCurrentTime() {
+        const now = new Date();
+        const timeInput = document.getElementById('time');
+        timeInput.value = now.toString();
+    }
+
+    // Llama a getCurrentTime para obtener la hora actual antes de enviar el formulario.
+    getCurrentTime();
+</script>
+</body>
+</html>
