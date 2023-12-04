@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Página</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="imagen1.jpg" alt="Imagen 1">
+            <button onclick="redirigir('pagina1.html')">Ir a Página 1</button>
+        </div>
+        <div class="box">
+            <img src="imagen2.jpg" alt="Imagen 2">
+            <button onclick="redirigir('pagina2.html')">Ir a Página 2</button>
+        </div>
+        <div class="box">
+            <img src="imagen3.jpg" alt="Imagen 3">
+            <button onclick="redirigir('pagina3.html')">Ir a Página 3</button>
+        </div>
+    </div>
+
+    <script>
+        function redirigir(pagina) {
+            window.location.href = pagina;
+        }
+    </script>
+</body>
+</html>

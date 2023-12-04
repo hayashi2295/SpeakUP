@@ -30,7 +30,7 @@
             // Change the value of the submit button to "Submitting..." while the form is being submitted.
             let data = new FormData(form);
             // The FormData() method creates a new FormData object that contains the values of all the form fields.
-            fetch('https://script.google.com/macros/s/AKfycbxB7u6yhWgdWvcz2D-ncvJymu5Jl-RaelYzI3HG_NDhkedG-sA9chUzY_MyoDmTgV7q/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbyPqh-KJWwsOJrVvz0iHr63ochxafHahNgw20cvfXPpo83_fx9t3u7v35t6hFV1qdTD/exec', {
                     method: "POST",
                     body: data
                 })
@@ -48,8 +48,8 @@
                     if (data.includes("Success")) {
                         // Espera dos segundos antes de redirigir a index.html
                         setTimeout(() => {
-                            window.location.href = 'contador.html';
-                        }, 2000);
+                            window.location.href = './modalidades/modalidades.html';
+                        }, 1000);
                     }
                 });
         })
