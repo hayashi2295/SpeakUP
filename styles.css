@@ -1,0 +1,30 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  body {
+    background-image: url('./1-INICIO.jpg'); /* Reemplaza 'tu-imagen.jpg' con la ruta correcta de tu imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  form {
+    text-align: center;
+    max-width: 400px; /* Ajusta el ancho máximo del formulario según tus preferencias */
+    width: 100%;
+  }
+  
+  #msg {
+    color: white; /* Color blanco */
+    margin-top: 20px; /* Ajusta el margen superior según tus preferencias */
+    font-size: 1.2em; /* Tamaño de fuente más grande que el del formulario */
+    font-family: 'Arial', sans-serif; /* Cambia el tipo de fuente según tus preferencias */
+  }

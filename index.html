@@ -1,75 +1,62 @@
-<!DOCTYPE html>
-<html lang="es">
+                
+<!DOCTYPE html> 
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Inicial</title>
-  <style>
-    body {
-      background-image: url('./1-INICIO.jpg'); /* Cambia 'ruta_de_tu_imagen.jpg' por la ruta de tu imagen de fondo */
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    #formulario {
-      background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente blanco */
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-    }
-
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #3498db; /* Color de fondo del botón (puedes cambiarlo) */
-      color: #fff; /* Color del texto del botón (puedes cambiarlo) */
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeakOut</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+ 
 <body>
-
-  <div id="formulario">
-    <label for="codigo_alumno">Código de Alumno:</label>
-    <input type="text" id="codigo_alumno" name="codigo_alumno" required>
-    <br>
-    <button onclick="redirigir()">Ir a Otra Página</button>
-
-    <!-- Formulario de Registro -->
-    <form method="POST" action="https://script.google.com/macros/s/AKfycbxulKF_fupVo84_NaDhY1nkOJzZZj5ELGJOoYB6LThyKXglJLLhRpuwia4grKro7KxXPQ/exec">
-        <input name="email" type="email" placeholder="Email" required>
-        <input name="name" type="text" placeholder="Name" required>
-        <a href="../prueba1/registro.html"><button type="submit">Enviar</button></a>
-        
+    <h1 id="msg"></h1>
+    <!-- The <h1> element defines a heading. The id attribute creates a unique identifier for the element. -->
+    <form id="myForm">
+        <input type="text" name="name" placeholder='Name'><br><br>
+        <!-- The <input> element is a form control element that allows the user to input data. -->
+        <input type="email" name="email" placeholder='Email'><br><br>
+        <input type="tel" name="phone" placeholder='Phone'><br><br>
+        <input type="submit" id="sub">
+        <!-- The <input type="submit"> element creates a submit button. The id attribute creates a unique identifier for the element. -->
     </form>
-  </div>
-
-  <script>
-    function redirigir() {
-      var codigo = document.getElementById('codigo_alumno').value;
-      if (codigo.trim() !== "") {
-        // Redirigir a otra página, puedes cambiar 'otra_pagina.html' por la página a la que quieres redirigir
-        window.location.href = 'otra_pagina.html';
-      } else {
-        alert('Por favor, ingresa un código de alumno.');
-      }
-    }
-  </script>
-
+    <script>
+        let form = document.querySelector("form");
+        // The document.querySelector() method returns the first element that matches a specified CSS selector.
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // The preventDefault() method stops the form from submitting and prevents the page from refreshing.
+            document.querySelector("#sub").value = "Submiting..";
+            // Change the value of the submit button to "Submitting..." while the form is being submitted.
+            let data = new FormData(form);
+            // The FormData() method creates a new FormData object that contains the values of all the form fields.
+            fetch('https://script.google.com/macros/s/AKfycbxB7u6yhWgdWvcz2D-ncvJymu5Jl-RaelYzI3HG_NDhkedG-sA9chUzY_MyoDmTgV7q/exec', {
+                    method: "POST",
+                    body: data
+                })
+                // The fetch() method is used to make a request to the server and retrieve data.
+                // This is an example API endpoint. Replace it with the actual URL for the API endpoint you want to use.
+                .then(res => res.text())
+                // The .then() method is used to handle the response from the server.
+                // The response is converted to text using the res.text() method.
+                .then(data => {
+                    document.querySelector("#msg").innerHTML = data;
+                    // The innerHTML property sets or returns the HTML content of an element.
+                    // Here, we are setting the content of the <h1> element to the response from the server.
+                    document.querySelector("#sub").value = "Submit"
+                    // Change the value of the submit button back to "Submit" after the form has been submitted.
+                    if (data.includes("Success")) {
+                        // Espera dos segundos antes de redirigir a index.html
+                        setTimeout(() => {
+                            window.location.href = 'contador.html';
+                        }, 2000);
+                    }
+                });
+        })
+    </script>
 </body>
+ 
 </html>
+                
+
+            
