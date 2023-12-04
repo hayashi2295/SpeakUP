@@ -1,1 +1,75 @@
-hola guapa :3
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Inicial</title>
+  <style>
+    body {
+      background-image: url('./1-INICIO.jpg'); /* Cambia 'ruta_de_tu_imagen.jpg' por la ruta de tu imagen de fondo */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #formulario {
+      background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente blanco */
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db; /* Color de fondo del botón (puedes cambiarlo) */
+      color: #fff; /* Color del texto del botón (puedes cambiarlo) */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="formulario">
+    <label for="codigo_alumno">Código de Alumno:</label>
+    <input type="text" id="codigo_alumno" name="codigo_alumno" required>
+    <br>
+    <button onclick="redirigir()">Ir a Otra Página</button>
+
+    <!-- Formulario de Registro -->
+    <form method="POST" action="https://script.google.com/macros/s/AKfycbxulKF_fupVo84_NaDhY1nkOJzZZj5ELGJOoYB6LThyKXglJLLhRpuwia4grKro7KxXPQ/exec">
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="name" type="text" placeholder="Name" required>
+        <a href="../prueba1/registro.html"><button type="submit">Enviar</button></a>
+        
+    </form>
+  </div>
+
+  <script>
+    function redirigir() {
+      var codigo = document.getElementById('codigo_alumno').value;
+      if (codigo.trim() !== "") {
+        // Redirigir a otra página, puedes cambiar 'otra_pagina.html' por la página a la que quieres redirigir
+        window.location.href = 'otra_pagina.html';
+      } else {
+        alert('Por favor, ingresa un código de alumno.');
+      }
+    }
+  </script>
+
+</body>
+</html>
