@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grabación de Video</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Grabación de Video</h1>
+    
+    <video id="video" autoplay></video>
+    <button id="startRecording">Comenzar Grabación</button>
+    <button id="stopRecording" disabled>Detener Grabación</button>
+    <button id="download" disabled>Descargar Video</button>
+
+    <script>
+        let stream, mediaRecorder, recordedChunks = [];
+
+        const videoElement = document.getElementById('video');
+        const startRecordingButton = document.getElementById('startRecording');
+        const stopRecordingButton = document.getElementById('stopRecording');
+        const downloadButton = document.getElementById('download');
+
+        // Solicitar acceso a la cámara
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                videoElement.srcObject = stream;
+                videoElement.play();
+                startRecordingButton.disabled = false;
+                mediaRecorder = new MediaRecorder(stream);
+
+                // Evento cuando hay datos disponibles
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        recordedChunks.push(event.data);
+                    }
+                };
+
+                // Evento cuando se detiene la grabación
+                mediaRecorder.onstop = () => {
+                    downloadButton.disabled = false;
+                };
+            })
+            .catch((error) => {
+                console.error('Error al acceder a la cámara:', error);
+            });
+
+        // Comenzar la grabación
+        startRecordingButton.addEventListener('click', () => {
+            startRecordingButton.disabled = true;
+            stopRecordingButton.disabled = false;
+            recordedChunks = [];
+            mediaRecorder.start();
+        });
+
+        // Detener la grabación
+        stopRecordingButton.addEventListener('click', () => {
+            startRecordingButton.disabled = false;
+            stopRecordingButton.disabled = true;
+            mediaRecorder.stop();
+        });
+
+        // Descargar el video grabado
+        downloadButton.addEventListener('click', () => {
+            const blob = new Blob(recordedChunks, { type: 'video/webm' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            document.body.appendChild(a);
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'grabacion.webm';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>

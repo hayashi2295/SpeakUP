@@ -28,3 +28,19 @@ html, body {
     font-size: 1.2em; /* Tamaño de fuente más grande que el del formulario */
     font-family: 'Arial', sans-serif; /* Cambia el tipo de fuente según tus preferencias */
   }
+
+  .titulo{
+    text-align: center;
+    color: white;
+    margin-top: 20px; /* Ajusta según sea necesario */
+}
+
+.main-title {
+    font-size: 4em; /* Tamaño de fuente más grande */
+    font-family: 'Arial', sans-serif; /* Cambia la fuente según tus preferencias */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.subtitle {
+    font-size: 1.5em; /* Tamaño de fuente para el subtítulo */
+}
