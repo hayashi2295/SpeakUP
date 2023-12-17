@@ -1,3 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('./fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .contenedor {
+    position: relative;
+  }
+  
+  .imagen-superpuesta {
+    position: absolute;
+    top: 0;
+    left: 6%;
+    width: 87%; /* Ajusta el ancho según tus necesidades */
+    height: auto; /* Ajusta la altura automáticamente según el ancho */
+    z-index: 1; /* Asegura que la imagen superpuesta esté sobre la de fondo */
+  }
+
 /* Estilo para el contenedor del botón */
 #boton-container {
     position: fixed; /* Fija el contenedor en la ventana del navegador */
