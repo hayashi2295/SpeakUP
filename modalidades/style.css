@@ -1,0 +1,48 @@
+/* style.css */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('./modalidades.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contenedor {
+  position: relative;
+}
+
+.imagen-superpuesta {
+  position: absolute;
+  top: 0;
+  left: 4%;
+  width: 93%; /* Ajusta el ancho según tus necesidades */
+  height: auto; /* Ajusta la altura automáticamente según el ancho */
+  z-index: 1; /* Asegura que la imagen superpuesta esté sobre la de fondo */
+}
+
+.contenedor-superpuesto {
+  position: absolute;
+  top: 350px; /* Ajusta la posición verticalmente según tus necesidades */
+  left: 5%; /* Ajusta la posición horizontalmente según tus necesidades */
+  display: flex; /* Utiliza flexbox para organizar los elementos en fila */
+  flex-direction: column; /* Organiza los elementos en columna */
+}
+
+.contenedor-superpuesto .imagen-superpuesta {
+  width: 500px; /* Ajusta el ancho según tus necesidades */
+  position: relative;
+  margin-bottom: 20px; /* Espacio entre las imágenes */
+}
+
+.contenedor-superpuesto .imagen-superpuesta img {
+  width: 100%; /* Ajusta el ancho según tus necesidades */
+  height: auto; /* Ajusta la altura automáticamente según el ancho */
+  z-index: 1; /* Asegura que la imagen superpuesta esté sobre la de fondo */
+}
+
+.contenedor-superpuesto button {
+  width: 200px; /* Ajusta el ancho según tus necesidades */
+  margin-top: 10px; /* Espacio entre la imagen y el botón */
+}

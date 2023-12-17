@@ -1,32 +1,30 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Página</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Página con Imágenes</title>
 </head>
 <body>
-    <div class="container">
-        <div class="box">
-            <img src="imagen1.jpg" alt="Imagen 1">
-            <button onclick="redirigir('../grabaciones/grabacion.html')">Grabación Prueba</button>
-        </div>
-        <div class="box">
-            <img src="imagen2.jpg" alt="Imagen 2">
-            <button onclick="redirigir('pagina2.html')">Ir a Página 2</button>
-        </div>
-        <div class="box">
-            <img src="imagen3.jpg" alt="Imagen 3">
-            <button onclick="redirigir('pagina3.html')">Ir a Página 3</button>
-        </div>
-    </div>
 
-    <script>
-        function redirigir(pagina) {
-            window.location.href = pagina;
-        }
-    </script>
+  <div class="contenedor">
+    <img src="./bienvenido.png" alt="Imagen superpuesta" class="imagen-superpuesta">
+    
+    <div class="contenedor-superpuesto">
+      <div class="imagen-superpuesta">
+        <a href="./elevatorpitch/elevator.html"><img src="./botón elevator pitch.png" alt="Imagen superpuesta 1"></a>       
+      </div>
+      <div class="imagen-superpuesta">
+       <a href="./jurado/jurado.html"><img src="./botón expo.png" alt="Imagen superpuesta 2"></a> 
+      </div>
+      
+      <div class="imagen-superpuesta">
+        <a href="./personal/personal.html"><img src="./botón presentacion.png" alt="Imagen superpuesta 3"></a>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
