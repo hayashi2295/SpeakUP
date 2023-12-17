@@ -1,5 +1,4 @@
-                
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,57 +9,44 @@
 </head>
  
 <body>
-    <h1 id="msg"></h1>
-    <!-- The <h1> element defines a heading. The id attribute creates a unique identifier for the element. -->
-        <div class="titulo">
-            <div class="main-title">SpeakOut</div>
-            <div class="subtitle">Cabina Inmersiva de Comunicación</div>
+    <div class="container">
+        <div class="title-container">
+            <div class="image-container">
+                <img src="./LOGO SPEAKUP.png" height="20%" width="20%">
+            </div>
         </div>
-        <form id="myForm">
-        <input type="text" name="name" placeholder='Name'><br><br>
-        <!-- The <input> element is a form control element that allows the user to input data. -->
-        <input type="email" name="email" placeholder='Email'><br><br>
-        <input type="tel" name="phone" placeholder='Phone'><br><br>
-        <input type="submit" id="sub">
-        <!-- The <input type="submit"> element creates a submit button. The id attribute creates a unique identifier for the element. -->
-    </form>
+        <form id="form">
+            <input type="text" name="name" placeholder='Nombres y apellidos'><br><br>
+            <input type="email" name="email" placeholder='Correo'><br><br>
+            <input type="tel" name="phone" placeholder='Celular'><br><br>
+            <input type="submit" id="sub">
+        </form>
+    </div>
+    <h1 id="msg"></h1>
     <script>
         let form = document.querySelector("form");
-        // The document.querySelector() method returns the first element that matches a specified CSS selector.
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            // The preventDefault() method stops the form from submitting and prevents the page from refreshing.
-            document.querySelector("#sub").value = "Submiting..";
-            // Change the value of the submit button to "Submitting..." while the form is being submitted.
+            document.querySelector("#sub").value = "Submitting..";
             let data = new FormData(form);
-            // The FormData() method creates a new FormData object that contains the values of all the form fields.
             fetch('https://script.google.com/macros/s/AKfycbyPqh-KJWwsOJrVvz0iHr63ochxafHahNgw20cvfXPpo83_fx9t3u7v35t6hFV1qdTD/exec', {
-                    method: "POST",
-                    body: data
-                })
-                // The fetch() method is used to make a request to the server and retrieve data.
-                // This is an example API endpoint. Replace it with the actual URL for the API endpoint you want to use.
-                .then(res => res.text())
-                // The .then() method is used to handle the response from the server.
-                // The response is converted to text using the res.text() method.
-                .then(data => {
-                    document.querySelector("#msg").innerHTML = data;
-                    // The innerHTML property sets or returns the HTML content of an element.
-                    // Here, we are setting the content of the <h1> element to the response from the server.
-                    document.querySelector("#sub").value = "Submit"
-                    // Change the value of the submit button back to "Submit" after the form has been submitted.
-                    if (data.includes("Success")) {
-                        // Espera dos segundos antes de redirigir a index.html
-                        setTimeout(() => {
-                            window.location.href = './modalidades/modalidades.html';
-                        }, 1000);
-                    }
-                });
+                method: "POST",
+                body: data
+            })
+            .then(res => res.text())
+            .then(data => {
+                document.querySelector("#msg").innerHTML = data;
+                document.querySelector("#sub").value = "Submit"
+                if (data.includes("Success")) {
+                    setTimeout(() => {
+                        window.location.href = './modalidades/modalidades.html';
+                    }, 1000);
+                }
+            });
         })
     </script>
 </body>
- 
 </html>
-                
+       
 
             

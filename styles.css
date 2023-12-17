@@ -1,46 +1,102 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  body {
-    background-image: url('./1-INICIO.jpg'); /* Reemplaza 'tu-imagen.jpg' con la ruta correcta de tu imagen */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  
-  form {
-    text-align: center;
-    max-width: 400px; /* Ajusta el ancho máximo del formulario según tus preferencias */
-    width: 100%;
-  }
-  
-  #msg {
-    color: white; /* Color blanco */
-    margin-top: 20px; /* Ajusta el margen superior según tus preferencias */
-    font-size: 1.2em; /* Tamaño de fuente más grande que el del formulario */
-    font-family: 'Arial', sans-serif; /* Cambia el tipo de fuente según tus preferencias */
-  }
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: left; /* Ajustado a "center" en lugar de "left" */
+}
 
-  .titulo{
-    text-align: center;
-    color: white;
-    margin-top: 20px; /* Ajusta según sea necesario */
+body {
+  background-image: url('./inicio.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction:column; /* Cambiado a columna para apilar elementos verticalmente */
+  align-items: flex-start; /* Ajustado a "flex-start" para alinear elementos a la izquierda */
+}
+.title-container {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px; /* Añadido margen inferior para separar del formulario */
+  margin-left: 100px;
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 250px;
+  width: 100%;
+  margin-left: 300px; /* Ajustado el margen izquierdo */
+  margin-bottom: 20px; /* Añadido margen inferior para separar del título */
+}
+
+form input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form input[type="submit"] {
+  background-color: #610b46;
+  color: white;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: rgb(57, 6, 105), 69, 160);
+}
+
+.titulo {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  order: -1; /* Añadido para cambiar el orden del título en la disposición flex */
 }
 
 .main-title {
-    font-size: 4em; /* Tamaño de fuente más grande */
-    font-family: 'Arial', sans-serif; /* Cambia la fuente según tus preferencias */
-    font-weight: bold; /* Texto en negrita */
+  font-family: 'Gilroy', sans-serif; /* Agregado para utilizar la fuente Gilroy */
+  font-size: 4em;
+  font-weight: bold;
 }
 
 .subtitle {
-    font-size: 1.5em; /* Tamaño de fuente para el subtítulo */
+  font-size: 1.5em;
+}
+
+#msg {
+  color: white;
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-family: 'Arial', sans-serif;
+}
+
+.miDiv {
+  background-color: lightblue;
+  padding: 20px;
+  margin-left: 20px; /* Ajusta según sea necesario */
+}
+.image-container {
+  position: absolute;
+  top: 100px; /* Ajusta la posición vertical en píxeles */
+  left: 270px; /* Ajusta la posición horizontal en píxeles */
+  width: 350px; /* Ajusta el ancho según tus necesidades */
+  height: auto;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
 }

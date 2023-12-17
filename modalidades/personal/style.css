@@ -1,0 +1,18 @@
+/* Estilo para el contenedor del botón */
+#boton-container {
+    position: fixed; /* Fija el contenedor en la ventana del navegador */
+    bottom: 20px; /* Ajusta la posición vertical desde la parte inferior */
+    right: 20px; /* Ajusta la posición horizontal desde la derecha */
+    z-index: 999; /* Asegura que esté encima de otros elementos */
+  }
+  
+  /* Estilo para el botón */
+  #mi-boton {
+    padding: 10px 20px; /* Ajusta el espaciado interno del botón */
+    background-color: #3498db; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    text-decoration: none; /* Elimina el subrayado del texto en el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    display: inline-block; /* Permite ajustar el ancho y alto del botón */
+  }
+  
