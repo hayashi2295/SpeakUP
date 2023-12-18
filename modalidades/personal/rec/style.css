@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('./fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contenedor {
+  position: relative;
+  z-index: 1; /* Establece un z-index para el contenedor de las imágenes */
+}
+
+.imagen-superpuesta {
+  position: absolute;
+  top: 50px;
+  left: 6%;
+  width: 90%;
+  height:fit-content;
+  z-index: 1; /* Asegura que las imágenes estén en el mismo nivel de z-index */
+}
+
+/* Estilo para el contenedor del botón */
+#boton-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2; /* Asegura que el contenedor del botón esté sobre las imágenes */
+}
+
+/* Estilo para el botón */
+#mi-boton {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Estilo para el contenedor de la pantalla de la cámara */
+/* En tu archivo style.css */
+
+#video-container {
+  width: 900px; /* Ancho ajustado manualmente */
+  height: 250px; /* Altura ajustada manualmente */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3; /* Asegura que la pantalla de la cámara esté sobre todo */
+}
